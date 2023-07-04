@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Project 2</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3F3038;
+            color: #fff;
+            padding: 2px;
+            position: fixed;
+            width: 100%;
+        }
+
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 50px;
+            margin-left: 30px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+
+        }
+
+        nav ul li a:hover {
+            color: #D4C7CB;
+        }
+
+        nav ul li img {
+            display: inline;
+            margin-right: 200px;
+            margin-left: 50px;
+            margin-bottom: 0px;
+            margin-top: 0px;
+
+        }
+
+        section {
+            padding: 0px;
+
+        }
+
+        .titel {
+            color: rgb(111, 8, 8);
+            text-decoration: underline;
+            text-align: center;
+            padding: 50px;
+            margin: 25px;
+        }
+
+        .SUBTitel {
+            color: rgb(111, 8, 8);
+            font-family: monospace;
+        }
+
+        #home {
+            background-color: #FDF6FA;
+            align-items: center;
+            height: 720px;
+            width: 100%;
+        }
+
+        #home img {
+            width: auto;
+            height: 720px;
+            float: left;
+        }
+
+        .alignment {
+            display: grid;
+            grid-template-columns: auto;
+            align-items: center;
+            justify-content: center;
+            padding-top: 300px;
+            font-family: monospace;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        .typing {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid black;
+            animation: typing 3s steps(40) infinite;
+        }
+
+        .social-icon {
+            height: 50px;
+            width: 50px;
+
+        }
+
+        .btn {
+            border: 2px solid black;
+            background-color: white;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .success {
+            border-color: #D4C7CB;
+            color: #D4C7CB;
+        }
+
+        .success:hover {
+            background-color: #D4C7CB;
+            color: white;
+        }
+
+
+
+        #about {
+            margin-left: 20%;
+            margin-right: 20%;
+
+        }
+        #about p {
+           font-size: medium;
+           font-family: cursive;
+
+        }
+        #about p h4{
+           font-size: medium;
+           font-family: cursive;
+
+        }
+
+        #Education {
+            margin-left: 20%;
+            margin-right: 20%;
+
+        }
+
+
+        .education-section {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px;
+        }
+
+        .timeline-content {
+            background-color: #FDF6FA;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .timeline-duration {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-description {
+            font-size: 16px;
+        }
+
+        #Skills {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        #Skills div ul li {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-top: 5px;
+            margin: 5px;
+            border: #3F3038 solid;
+        }
+
+        .skillescontener {
+            display: grid;
+            grid-template-columns: repeat(12);
+            grid-template-rows: repeat(10);
+        }
+
+        .softskills {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            text-align: center;
+            list-style-type: none;
+            background-color: #FDF6FA;
+            border: #3F3038 solid;
+            box-shadow: 30px 20px #3F3038;
+            padding: 10px;
+        }
+
+        .techskills {
+            grid-column-start: 7;
+            grid-column-end: 11;
+            text-align: center;
+            list-style-type: none;
+            background-color: #FDF6FA;
+            border: #3F3038 solid;
+            box-shadow: 30px 20px #3F3038;
+            padding: 10px;
+
+        }
+
+        #Languages {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        #Languages div h5 {
+            padding-top: 7px;
+        }
+
+        #Languages div p {
+            font-size: small;
+            padding: 0%;
+            margin-top: 0%;
+            margin-bottom: 0%;
+            margin-right: 0%;
+        }
+
+        .langcontaner {
+            display: grid;
+            grid-template-columns: repeat(12);
+            grid-template-rows: repeat(10);
+
+        }
+
+        .arabiccontaner {
+            grid-column-start: 1;
+            grid-column-end: 5;
+
+        }
+
+        .enghishcontaner {
+            grid-column-start: 7;
+            grid-column-end: 11;
+        }
+
+        .langline1 {
+            width: 95%;
+            height: 20px;
+            background-color: #3F3038;
+            animation: 3s steps(40) infinite;
+        }
+
+        .langline2 {
+            width: 97%;
+            height: 20px;
+            background-color: #3F3038;
+            animation: 3s steps(40) infinite;
+        }
+
+        .langline3 {
+            width: 100%;
+            height: 20px;
+            background-color: #3F3038;
+            animation: 3s steps(40) infinite;
+        }
+
+        .langline4 {
+            width: 70%;
+            height: 20px;
+            background-color: #3F3038;
+            animation: 3s steps(40) infinite;
+        }
+
+        .langline5 {
+            width: 80%;
+            height: 20px;
+            background-color: #3F3038;
+            animation: 3s steps(40) infinite;
+        }
+
+        .langline6 {
+            width: 90%;
+            height: 20px;
+            background-color: #3F3038;
+            animation: 3s steps(40) infinite;
+        }
+
+        .persange {
+            margin-left: 100%;
+            color: #3F3038;
+            font-weight: bold;
+        }
+
+        #Certificates {
+            text-align: center;
+        }
+
+        .Certificates1 {
+            display: inline-block;
+            background-color: #D4C7CB;
+            border-radius: 2px;
+        }
+
+        #Certificates div img {
+            border: #3F3038 solid;
+            width: 400px;
+            height: 500px;
+        }
+
+        .Certificates1:hover {
+            height: 550;
+            width: 450px;
+
+        }
+
+        #Experience {
+            margin-left: 20%;
+            margin-right: 20%;
+
+        }
+
+        .experiencee {
+            background-color: #FDF6FA;
+            border: #3F3038 solid;
+            box-shadow: 30px 20px #3F3038;
+            padding: 10px;
+        }
+
+        .ref {
+            display: grid;
+            grid-template-columns: repeat(12);
+            grid-template-rows: repeat(10);
+            margin-left: 5%;
+            margin-right: 5%;
+            padding: 5px;
+        }
+
+        .ref1 {
+            grid-column-start: 1;
+            grid-column-end: 5;
+
+        }
+
+        .ref1 img {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+
+        .ref1 h4 {
+            position: relative;
+            margin-left: 110px;
+        }
+
+        .ref1 h5 {
+            position: relative;
+            margin-left: 110px;
+
+        }
+
+        .ref1 h6 {
+            position: relative;
+            margin-left: 110px;
+
+        }
+
+        .ref2 {
+            grid-column-start: 7;
+            grid-column-end: 11;
+        }
+
+        .ref2 img {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+
+        }
+
+        .ref2 h4 {
+            position: relative;
+            margin-left: 110px;
+        }
+
+        .ref2 h5 {
+            position: relative;
+            margin-left: 110px;
+
+        }
+
+        .ref2 h6 {
+            position: relative;
+            margin-left: 110px;
+
+        }
+
+        #Projects {
+            margin-left: 20%;
+            margin-right: 20%;
+
+        }
+
+        #Projects h3 {
+            padding-left: 50px;
+            text-align: center;
+
+        }
+
+        #Projects img {
+            width: 500px;
+            height: 600px;
+        }
+
+        #Projects div table {
+            text-align: justify;
+        }
+
+        #Projects div table p {
+            text-align: justify;
+            padding-left: 70px;
+            font-size: medium;
+        }
+
+        footer {
+            background-color: #3F3038;
+            padding: 20px 0;
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .footer-container {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        .footer-links a:hover {
+            color: #D4C7CB;
+        }
+
+        .social-icon2 {
+            height: 20px;
+            width: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <img src="logo.png" width="200px" height="auto">
+                <li class="nav-item"><a href="#home">Home</a></li>
+                <li class="nav-item"><a href="#about">About</a></li>
+                <li class="nav-item"><a href="#education">Education</a></li>
+                <li class="nav-item"><a href="#Skills">Skills</a></li>
+                <li class="nav-item"><a href="#Languages">Languages</a></li>
+                <li class="nav-item"><a href="#Certificates">Certificates</a></li>
+                <li class="nav-item"><a href="#Experience">Experience</a></li>
+                <li class="nav-item"><a href="#Projects">Projects</a></li>
+                <li class="nav-item"><a href="#References">References</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <img src="IMG-20230703-WA0000.jpg" alt="personal image">
+        <div class="alignment ">
+            <h1>Hi There,</h1>
+            <h2> I'M Sajeda Momani</h2>
+            <h3 class="typing"> I Am Full Stack Web Developer</h3>
+            <div>
+                <a href="https://www.facebook.com/profile.php?id=100041542906428" target="_blank">
+                    <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path xmlns="http://www.w3.org/2000/svg"
+                            d="M20 12.05C19.9813 10.5255 19.5273 9.03809 18.6915 7.76295C17.8557 6.48781 16.673 5.47804 15.2826 4.85257C13.8921 4.2271 12.3519 4.01198 10.8433 4.23253C9.33473 4.45309 7.92057 5.10013 6.7674 6.09748C5.61422 7.09482 4.77005 8.40092 4.3343 9.86195C3.89856 11.323 3.88938 12.8781 4.30786 14.3442C4.72634 15.8103 5.55504 17.1262 6.69637 18.1371C7.83769 19.148 9.24412 19.8117 10.75 20.05V14.38H8.75001V12.05H10.75V10.28C10.7037 9.86846 10.7483 9.45175 10.8807 9.05931C11.0131 8.66687 11.23 8.30827 11.5161 8.00882C11.8022 7.70936 12.1505 7.47635 12.5365 7.32624C12.9225 7.17612 13.3368 7.11255 13.75 7.14003C14.3498 7.14824 14.9482 7.20173 15.54 7.30003V9.30003H14.54C14.3676 9.27828 14.1924 9.29556 14.0276 9.35059C13.8627 9.40562 13.7123 9.49699 13.5875 9.61795C13.4627 9.73891 13.3667 9.88637 13.3066 10.0494C13.2464 10.2125 13.2237 10.387 13.24 10.56V12.07H15.46L15.1 14.4H13.25V20C15.1399 19.7011 16.8601 18.7347 18.0985 17.2761C19.3369 15.8175 20.0115 13.9634 20 12.05Z"
+                            fill="#000000" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/sajeda-momani-ba6a77248/" target="_blank">
+
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18.72 3.99997H5.37C5.19793 3.99191 5.02595 4.01786 4.86392 4.07635C4.70189 4.13484 4.55299 4.22471 4.42573 4.34081C4.29848 4.45692 4.19537 4.59699 4.12232 4.75299C4.04927 4.909 4.0077 5.07788 4 5.24997V18.63C4.01008 18.9901 4.15766 19.3328 4.41243 19.5875C4.6672 19.8423 5.00984 19.9899 5.37 20H18.72C19.0701 19.9844 19.4002 19.8322 19.6395 19.5761C19.8788 19.32 20.0082 18.9804 20 18.63V5.24997C20.0029 5.08247 19.9715 4.91616 19.9078 4.76122C19.8441 4.60629 19.7494 4.466 19.6295 4.34895C19.5097 4.23191 19.3672 4.14059 19.2108 4.08058C19.0544 4.02057 18.8874 3.99314 18.72 3.99997ZM9 17.34H6.67V10.21H9V17.34ZM7.89 9.12997C7.72741 9.13564 7.5654 9.10762 7.41416 9.04768C7.26291 8.98774 7.12569 8.89717 7.01113 8.78166C6.89656 8.66615 6.80711 8.5282 6.74841 8.37647C6.6897 8.22474 6.66301 8.06251 6.67 7.89997C6.66281 7.73567 6.69004 7.57169 6.74995 7.41854C6.80986 7.26538 6.90112 7.12644 7.01787 7.01063C7.13463 6.89481 7.2743 6.80468 7.42793 6.74602C7.58157 6.68735 7.74577 6.66145 7.91 6.66997C8.07259 6.66431 8.2346 6.69232 8.38584 6.75226C8.53709 6.8122 8.67431 6.90277 8.78887 7.01828C8.90344 7.13379 8.99289 7.27174 9.05159 7.42347C9.1103 7.5752 9.13699 7.73743 9.13 7.89997C9.13719 8.06427 9.10996 8.22825 9.05005 8.3814C8.99014 8.53456 8.89888 8.6735 8.78213 8.78931C8.66537 8.90513 8.5257 8.99526 8.37207 9.05392C8.21843 9.11259 8.05423 9.13849 7.89 9.12997ZM17.34 17.34H15V13.44C15 12.51 14.67 11.87 13.84 11.87C13.5822 11.8722 13.3313 11.9541 13.1219 12.1045C12.9124 12.2549 12.7546 12.4664 12.67 12.71C12.605 12.8926 12.5778 13.0865 12.59 13.28V17.34H10.29V10.21H12.59V11.21C12.7945 10.8343 13.0988 10.5225 13.4694 10.3089C13.84 10.0954 14.2624 9.98848 14.69 9.99997C16.2 9.99997 17.34 11 17.34 13.13V17.34Z"
+                            fill="#000000" />
+                    </svg>
+                </a>
+                <a href="https://discord.com/channels/1125474252393545863/1125474253106597889" target="_blank">
+                    <svg class="social-icon" fill="#000000" viewBox="0 0 32 32" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20.992 20.163c-1.511-0.099-2.699-1.349-2.699-2.877 0-0.051 0.001-0.102 0.004-0.153l-0 0.007c-0.003-0.048-0.005-0.104-0.005-0.161 0-1.525 1.19-2.771 2.692-2.862l0.008-0c1.509 0.082 2.701 1.325 2.701 2.847 0 0.062-0.002 0.123-0.006 0.184l0-0.008c0.003 0.050 0.005 0.109 0.005 0.168 0 1.523-1.191 2.768-2.693 2.854l-0.008 0zM11.026 20.163c-1.511-0.099-2.699-1.349-2.699-2.877 0-0.051 0.001-0.102 0.004-0.153l-0 0.007c-0.003-0.048-0.005-0.104-0.005-0.161 0-1.525 1.19-2.771 2.692-2.862l0.008-0c1.509 0.082 2.701 1.325 2.701 2.847 0 0.062-0.002 0.123-0.006 0.184l0-0.008c0.003 0.048 0.005 0.104 0.005 0.161 0 1.525-1.19 2.771-2.692 2.862l-0.008 0zM26.393 6.465c-1.763-0.832-3.811-1.49-5.955-1.871l-0.149-0.022c-0.005-0.001-0.011-0.002-0.017-0.002-0.035 0-0.065 0.019-0.081 0.047l-0 0c-0.234 0.411-0.488 0.924-0.717 1.45l-0.043 0.111c-1.030-0.165-2.218-0.259-3.428-0.259s-2.398 0.094-3.557 0.275l0.129-0.017c-0.27-0.63-0.528-1.142-0.813-1.638l0.041 0.077c-0.017-0.029-0.048-0.047-0.083-0.047-0.005 0-0.011 0-0.016 0.001l0.001-0c-2.293 0.403-4.342 1.060-6.256 1.957l0.151-0.064c-0.017 0.007-0.031 0.019-0.040 0.034l-0 0c-2.854 4.041-4.562 9.069-4.562 14.496 0 0.907 0.048 1.802 0.141 2.684l-0.009-0.11c0.003 0.029 0.018 0.053 0.039 0.070l0 0c2.14 1.601 4.628 2.891 7.313 3.738l0.176 0.048c0.008 0.003 0.018 0.004 0.028 0.004 0.032 0 0.060-0.015 0.077-0.038l0-0c0.535-0.72 1.044-1.536 1.485-2.392l0.047-0.1c0.006-0.012 0.010-0.027 0.010-0.043 0-0.041-0.026-0.075-0.062-0.089l-0.001-0c-0.912-0.352-1.683-0.727-2.417-1.157l0.077 0.042c-0.029-0.017-0.048-0.048-0.048-0.083 0-0.031 0.015-0.059 0.038-0.076l0-0c0.157-0.118 0.315-0.24 0.465-0.364 0.016-0.013 0.037-0.021 0.059-0.021 0.014 0 0.027 0.003 0.038 0.008l-0.001-0c2.208 1.061 4.8 1.681 7.536 1.681s5.329-0.62 7.643-1.727l-0.107 0.046c0.012-0.006 0.025-0.009 0.040-0.009 0.022 0 0.043 0.008 0.059 0.021l-0-0c0.15 0.124 0.307 0.248 0.466 0.365 0.023 0.018 0.038 0.046 0.038 0.077 0 0.035-0.019 0.065-0.046 0.082l-0 0c-0.661 0.395-1.432 0.769-2.235 1.078l-0.105 0.036c-0.036 0.014-0.062 0.049-0.062 0.089 0 0.016 0.004 0.031 0.011 0.044l-0-0.001c0.501 0.96 1.009 1.775 1.571 2.548l-0.040-0.057c0.017 0.024 0.046 0.040 0.077 0.040 0.010 0 0.020-0.002 0.029-0.004l-0.001 0c2.865-0.892 5.358-2.182 7.566-3.832l-0.065 0.047c0.022-0.016 0.036-0.041 0.039-0.069l0-0c0.087-0.784 0.136-1.694 0.136-2.615 0-5.415-1.712-10.43-4.623-14.534l0.052 0.078c-0.008-0.016-0.022-0.029-0.038-0.036l-0-0z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://wa.me/0775606712" target="_blank">
+                    <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z"
+                            fill="#000000">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <br><br>
+            <button class="btn success"> <a href="#about">About Me</button></a>
+        </div>
+    </section>
+    <section id="about">
+        <h2 class="titel">About Me</h2>
+        <p>
+            Hello, I'm Sajeda Momani, a passionate and versatile professional with a background in Business Administration
+            and a keen interest in technology. I hold both a Master's and Bachelor's degree in Business Administration,
+            which have provided me with a solid foundation in strategic management, entrepreneurship, and
+            problem-solving.
+
+            While my academic journey started in the field of business, my fascination with technology led me to explore
+            the dynamic world of web development. Currently, I am actively engaged in a Web Development Bootcamp, honing
+            my skills in front-end and back-end technologies. This immersive experience has allowed me to merge my
+            business acumen with technical expertise, enabling me to create innovative and user-friendly web solutions.
+
+            With my interdisciplinary background, I bring a unique perspective to projects, combining business insights
+            with a deep understanding of technology trends. I thrive in collaborative environments, leveraging my
+            effective communication and teamwork skills to drive successful outcomes.
+
+            My goal is to leverage my knowledge and skills to contribute to the ever-evolving digital landscape. I am
+            eager to apply my expertise in developing intuitive and visually appealing web applications that enhance
+            user experiences and drive business growth.
+
+            I am excited about the endless possibilities that technology offers and committed to continuous learning and
+            professional growth. By blending my business background with my newfound passion for web development, I am
+            poised to make a meaningful impact in the field.
+
+            <p style="text-align: center; color: brown;">Let's connect and explore how we can collaborate on projects that leverage technology to drive innovation
+            and achieve remarkable results.</p>
+        </p>
+    </section>
+    <section id="education" class="education-section">
+        <h2 class="titel">Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Bachelor's Degree in Business Administration </h3>
+                    <p class="timeline-duration">2015 - 2019</p>
+                    <p class="timeline-description">Yarmouk University</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Master of Business Administration</h3>
+                    <p class="timeline-duration">2020 - 2022</p>
+                    <p class="timeline-description">Yarmouk Universit</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Skills">
+        <h2 class="titel">Skills</h2>
+        <div class="skillescontener">
+            <div class="softskills">
+                <h5 class="SUBTitel">Soft Skilles </h5>
+                <ul style=" list-style-type:none;">
+                    <li>Communication</li>
+                    <li>Problem-solving</li>
+                    <li>Teamwork</li>
+                    <li>Leadership</li>
+                    <li>Interpersonal skills</il>
+                    <li>Attention to detail</il>
+
+                </ul>
+            </div>
+            <div class="techskills">
+                <h5 class="SUBTitel">Technical Skilles </h5>
+                <ul style=" list-style-type:none;">
+                    <li>HTML</il>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Mokeup</li>
+                    <li>Wireframe</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="Languages">
+        <h2 class="titel">Languages</h2>
+        <div class="langcontaner">
+
+            <div class="arabiccontaner">
+                <h3 style="text-align: center;">Arabic</h3>
+                <h5>Speaking</h5>
+                <p class="persange">95%</p>
+                <DIV class="langline1"></DIV>
+                <h5>Writing</h5>
+                <p class="persange">97%</p>
+                <DIV class="langline2"></DIV>
+                <h5>Listening</h5>
+                <p class="persange">100%</p>
+                <DIV class="langline3"></DIV>
+            </div>
+            <div class="enghishcontaner">
+                <h3 style="text-align: center;">English</h3>
+                <h5>Speaking</h5>
+                <p class="persange">70%</p>
+                <DIV class="langline4"></DIV>
+                <h5>Writing</h5>
+                <p class="persange">80%</p>
+                <DIV class="langline5"></DIV>
+                <h5>Listening</h5>
+                <p class="persange">90%</p>
+                <DIV class="langline6"></DIV>
+            </div>
+        </div>
+
+    </section>
+    <section id="Certificates">
+        <h2 class="titel">Certificates</h2>
+        <div class="Certificates1">
+            <h4>HTML</h4>
+            <img src="html.jpg" alt="Certificate imge">
+        </div>
+        <div class="Certificates1">
+            <h4>CSS</h4>
+            <img src="css.jpg" alt="Certificate imge">
+        </div>
+        <div class="Certificates1">
+            <h4>JavaScript</h4>
+            <img src="java.jpg" alt="Certificate imge">
+        </div>
+    </section>
+    <section id="Experience">
+        <h2 class="titel">Experience</h2>
+        <div class="experiencee">
+            <h3 class="SUBTitel">Training Experience</h3>
+            <div class="description ">
+                <strong>Orange Coding Academy</strong> (June 2023 - November 2023)<br>
+                Full Stack Web Development Training Program (Duration: 6 months)
+            </div>
+            <div class="description">
+                <ul>
+                    <li>Completed an intensive and comprehensive training program at Orange Coding Academy, specializing
+                        in Full Stack Web Development.</li>
+                    <li>Acquired expertise in front-end technologies such as HTML, CSS, and JavaScript, including modern
+                        frameworks like React and Angular.</li>
+                    <li>Developed proficiency in back-end technologies such as Node.js and Express, with hands-on
+                        experience in building RESTful APIs.</li>
+                    <li>Gained knowledge of database management systems, including SQL and NoSQL databases like MongoDB.
+                    </li>
+                    <li>Implemented version control using Git and utilized agile methodologies for efficient project
+                        development and collaboration.</li>
+                    <li>Participated in real-world projects and successfully deployed web applications, demonstrating
+                        practical skills in designing, developing, and deploying full-stack web solutions.</li>
+                    <li>Received a completion certificate for the Full Stack Web Development Training Program from
+                        Orange Coding Academy.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="Projects">
+        <h2 class="titel">Projects</h2>
+        <div>
+            <table>
+                <tr>
+                    <td><img src="prtfolio one.png" alt="Project 1"></td>
+                    <td>
+                        <h3 class="SUBTitel">Wireframe and Mockup</h3> <br>
+                        <p>Gifty is an online gift store project that has completed the wireframing and mockup phase.
+                            The wireframes provided a visual structure and navigation flow, while the mockups showcased
+                            the design elements and product presentation. With a user-centric approach, the project aims
+                            to create an appealing and intuitive browsing experience for customers. The wireframes and
+                            mockups considered responsive design principles for optimal display across devices.</p>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+    </section>
+    <section id="References">
+        <h2 class="titel">References</h2>
+        <div class="ref">
+            <div class="ref1">
+                <img src="refrance1.jpg">
+                <h4> Yahya Melhem </h4>
+                <h5> Professor @ YU </h5>
+                <h6> Email: ymelhem@yu.edu.jo</h6>
+            </div>
+            <div class="ref2">
+                <img src="refrance2.jpg">
+                <h4> Hala Hamdan</h4>
+                <h5> Lead Trainer @ Orange Coding Academy</h5>
+                <h6> Email: gt.halla.hamdan@orange.com</h6>
+            </div>
+        </div>
+
+    </section>
+    <br><br>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#Education">Education</a>
+                <a href="#Skills">Skills</a>
+                <a href="#Languages">Languages</a>
+                <a href="#Certificates">Certificates</a>
+                <a href="#Experience">Experience</a>
+                <a href="#projects">projects</a>
+                <a href="#References">References</a>
+
+            </div>
+            <div>
+                <a href="https://www.facebook.com/profile.php?id=100041542906428" target="_blank">
+                    <svg class="social-icon2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path xmlns="http://www.w3.org/2000/svg"
+                            d="M20 12.05C19.9813 10.5255 19.5273 9.03809 18.6915 7.76295C17.8557 6.48781 16.673 5.47804 15.2826 4.85257C13.8921 4.2271 12.3519 4.01198 10.8433 4.23253C9.33473 4.45309 7.92057 5.10013 6.7674 6.09748C5.61422 7.09482 4.77005 8.40092 4.3343 9.86195C3.89856 11.323 3.88938 12.8781 4.30786 14.3442C4.72634 15.8103 5.55504 17.1262 6.69637 18.1371C7.83769 19.148 9.24412 19.8117 10.75 20.05V14.38H8.75001V12.05H10.75V10.28C10.7037 9.86846 10.7483 9.45175 10.8807 9.05931C11.0131 8.66687 11.23 8.30827 11.5161 8.00882C11.8022 7.70936 12.1505 7.47635 12.5365 7.32624C12.9225 7.17612 13.3368 7.11255 13.75 7.14003C14.3498 7.14824 14.9482 7.20173 15.54 7.30003V9.30003H14.54C14.3676 9.27828 14.1924 9.29556 14.0276 9.35059C13.8627 9.40562 13.7123 9.49699 13.5875 9.61795C13.4627 9.73891 13.3667 9.88637 13.3066 10.0494C13.2464 10.2125 13.2237 10.387 13.24 10.56V12.07H15.46L15.1 14.4H13.25V20C15.1399 19.7011 16.8601 18.7347 18.0985 17.2761C19.3369 15.8175 20.0115 13.9634 20 12.05Z"
+                            fill="#FFFFFF" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/sajeda-momani-ba6a77248/" target="_blank">
+
+                    <svg class="social-icon2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18.72 3.99997H5.37C5.19793 3.99191 5.02595 4.01786 4.86392 4.07635C4.70189 4.13484 4.55299 4.22471 4.42573 4.34081C4.29848 4.45692 4.19537 4.59699 4.12232 4.75299C4.04927 4.909 4.0077 5.07788 4 5.24997V18.63C4.01008 18.9901 4.15766 19.3328 4.41243 19.5875C4.6672 19.8423 5.00984 19.9899 5.37 20H18.72C19.0701 19.9844 19.4002 19.8322 19.6395 19.5761C19.8788 19.32 20.0082 18.9804 20 18.63V5.24997C20.0029 5.08247 19.9715 4.91616 19.9078 4.76122C19.8441 4.60629 19.7494 4.466 19.6295 4.34895C19.5097 4.23191 19.3672 4.14059 19.2108 4.08058C19.0544 4.02057 18.8874 3.99314 18.72 3.99997ZM9 17.34H6.67V10.21H9V17.34ZM7.89 9.12997C7.72741 9.13564 7.5654 9.10762 7.41416 9.04768C7.26291 8.98774 7.12569 8.89717 7.01113 8.78166C6.89656 8.66615 6.80711 8.5282 6.74841 8.37647C6.6897 8.22474 6.66301 8.06251 6.67 7.89997C6.66281 7.73567 6.69004 7.57169 6.74995 7.41854C6.80986 7.26538 6.90112 7.12644 7.01787 7.01063C7.13463 6.89481 7.2743 6.80468 7.42793 6.74602C7.58157 6.68735 7.74577 6.66145 7.91 6.66997C8.07259 6.66431 8.2346 6.69232 8.38584 6.75226C8.53709 6.8122 8.67431 6.90277 8.78887 7.01828C8.90344 7.13379 8.99289 7.27174 9.05159 7.42347C9.1103 7.5752 9.13699 7.73743 9.13 7.89997C9.13719 8.06427 9.10996 8.22825 9.05005 8.3814C8.99014 8.53456 8.89888 8.6735 8.78213 8.78931C8.66537 8.90513 8.5257 8.99526 8.37207 9.05392C8.21843 9.11259 8.05423 9.13849 7.89 9.12997ZM17.34 17.34H15V13.44C15 12.51 14.67 11.87 13.84 11.87C13.5822 11.8722 13.3313 11.9541 13.1219 12.1045C12.9124 12.2549 12.7546 12.4664 12.67 12.71C12.605 12.8926 12.5778 13.0865 12.59 13.28V17.34H10.29V10.21H12.59V11.21C12.7945 10.8343 13.0988 10.5225 13.4694 10.3089C13.84 10.0954 14.2624 9.98848 14.69 9.99997C16.2 9.99997 17.34 11 17.34 13.13V17.34Z"
+                            fill="#FFFFFF" />
+                    </svg>
+                </a>
+                <a href="https://discord.com/channels/1125474252393545863/1125474253106597889" target="_blank">
+                    <svg class="social-icon2" fill="#FFFFFF" viewBox="0 0 32 32" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20.992 20.163c-1.511-0.099-2.699-1.349-2.699-2.877 0-0.051 0.001-0.102 0.004-0.153l-0 0.007c-0.003-0.048-0.005-0.104-0.005-0.161 0-1.525 1.19-2.771 2.692-2.862l0.008-0c1.509 0.082 2.701 1.325 2.701 2.847 0 0.062-0.002 0.123-0.006 0.184l0-0.008c0.003 0.050 0.005 0.109 0.005 0.168 0 1.523-1.191 2.768-2.693 2.854l-0.008 0zM11.026 20.163c-1.511-0.099-2.699-1.349-2.699-2.877 0-0.051 0.001-0.102 0.004-0.153l-0 0.007c-0.003-0.048-0.005-0.104-0.005-0.161 0-1.525 1.19-2.771 2.692-2.862l0.008-0c1.509 0.082 2.701 1.325 2.701 2.847 0 0.062-0.002 0.123-0.006 0.184l0-0.008c0.003 0.048 0.005 0.104 0.005 0.161 0 1.525-1.19 2.771-2.692 2.862l-0.008 0zM26.393 6.465c-1.763-0.832-3.811-1.49-5.955-1.871l-0.149-0.022c-0.005-0.001-0.011-0.002-0.017-0.002-0.035 0-0.065 0.019-0.081 0.047l-0 0c-0.234 0.411-0.488 0.924-0.717 1.45l-0.043 0.111c-1.030-0.165-2.218-0.259-3.428-0.259s-2.398 0.094-3.557 0.275l0.129-0.017c-0.27-0.63-0.528-1.142-0.813-1.638l0.041 0.077c-0.017-0.029-0.048-0.047-0.083-0.047-0.005 0-0.011 0-0.016 0.001l0.001-0c-2.293 0.403-4.342 1.060-6.256 1.957l0.151-0.064c-0.017 0.007-0.031 0.019-0.040 0.034l-0 0c-2.854 4.041-4.562 9.069-4.562 14.496 0 0.907 0.048 1.802 0.141 2.684l-0.009-0.11c0.003 0.029 0.018 0.053 0.039 0.070l0 0c2.14 1.601 4.628 2.891 7.313 3.738l0.176 0.048c0.008 0.003 0.018 0.004 0.028 0.004 0.032 0 0.060-0.015 0.077-0.038l0-0c0.535-0.72 1.044-1.536 1.485-2.392l0.047-0.1c0.006-0.012 0.010-0.027 0.010-0.043 0-0.041-0.026-0.075-0.062-0.089l-0.001-0c-0.912-0.352-1.683-0.727-2.417-1.157l0.077 0.042c-0.029-0.017-0.048-0.048-0.048-0.083 0-0.031 0.015-0.059 0.038-0.076l0-0c0.157-0.118 0.315-0.24 0.465-0.364 0.016-0.013 0.037-0.021 0.059-0.021 0.014 0 0.027 0.003 0.038 0.008l-0.001-0c2.208 1.061 4.8 1.681 7.536 1.681s5.329-0.62 7.643-1.727l-0.107 0.046c0.012-0.006 0.025-0.009 0.040-0.009 0.022 0 0.043 0.008 0.059 0.021l-0-0c0.15 0.124 0.307 0.248 0.466 0.365 0.023 0.018 0.038 0.046 0.038 0.077 0 0.035-0.019 0.065-0.046 0.082l-0 0c-0.661 0.395-1.432 0.769-2.235 1.078l-0.105 0.036c-0.036 0.014-0.062 0.049-0.062 0.089 0 0.016 0.004 0.031 0.011 0.044l-0-0.001c0.501 0.96 1.009 1.775 1.571 2.548l-0.040-0.057c0.017 0.024 0.046 0.040 0.077 0.040 0.010 0 0.020-0.002 0.029-0.004l-0.001 0c2.865-0.892 5.358-2.182 7.566-3.832l-0.065 0.047c0.022-0.016 0.036-0.041 0.039-0.069l0-0c0.087-0.784 0.136-1.694 0.136-2.615 0-5.415-1.712-10.43-4.623-14.534l0.052 0.078c-0.008-0.016-0.022-0.029-0.038-0.036l-0-0z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://wa.me/0775606712" target="_blank">
+                    <svg class="social-icon2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z"
+                            fill="#FFFFFF">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-info">
+                &copy; 2023 Sajeda Momani. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
